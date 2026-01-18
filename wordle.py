@@ -1,5 +1,6 @@
 import random
 import os
+import math
 
 def load_words(filename="valid-wordle-words.txt"):
     """
@@ -21,9 +22,8 @@ def get_feedback(guess, target):
     'yellow' - correct letter in wrong position
     'grey'   - letter not in target word
 
-    Args:
-        guess (str): The guessed word
-        target (str): The target word
+    guess (str): The guessed word
+    target (str): The target word
 
     Returns:
         List[str]: Feedback for each letter
@@ -49,7 +49,32 @@ def get_feedback(guess, target):
 
     return feedback
 
-print(get_feedback("aabbcc", "ababbc"))
+def filter_words(possible_words, guess, feedback):
+    """
+    Returns list of possible target words based on feedback from the
+    previous guess
+    
+    possible_words: current list of possible targets to be filtered
+    guess: the word previously guessed
+    feedback: the feedback given to the previous guess
+
+    Returns filtered list of possible words
+    """
+
+    # Initialise empty list of possible targets
+    filtered = []
+
+    for word in possible_words:
+        if get_feedback(guess, word) == feedback:
+            filtered.append(word)
+
+    return filtered
+    
+# Strategy 1: uniformly select guess from list of possible targets
+def choose_guess_uniform(possible_words):
+    return random.choice(possible_words)
+
+# Strategy 2:
 
 
 def main():
