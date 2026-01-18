@@ -74,15 +74,33 @@ def filter_words(possible_words, guess, feedback):
 def choose_guess_uniform(possible_words):
     return random.choice(possible_words)
 
-# Strategy 2:
+# Strategy 2: select guess that minimises entropy
 
 
 def main():
-    # Load the list of valid words
-    word_list = load_words()
+    # Initialise list of valid words, random target, list of possible
+    # targets, and empty list of lists to store history
+    all_words = load_words()
+    target = random.choice(all_words)
 
-    # Choose a random target word
-    target_word = random.choice(word_list)
+    possible_words = all_words.copy()
+    history = []
+
+    max_guesses = 20
+    for turn in range(1, max_guesses + 1):
+        guess = choose_guess_uniform(possible_words)
+        feedback = get_feedback(guess, target)
+
+        history.append([guess, feedback])
+        possible_words = filter_words(possible_words, guess, feedback)
+
+        print(f"Turn {turn}: {guess} → {feedback}")
+
+        if guess == target:
+            print("Solved!")
+            return
+
+    print(f"Failed. Target was {target}")
 
 
 if __name__ == "__main__":
