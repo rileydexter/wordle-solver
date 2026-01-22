@@ -33,6 +33,10 @@ where p_i is the probability of observing feedback pattern i.
 
 While this policy is optimal under the modelling assumptions, it is computationally expensive, motivating the study of faster approximation methods.
 
+Empirical experiments confirmed that even with caching and pruning heuristics,
+entropy-based strategies scale poorly as the search space grows.
+
+
 ---
 
 ## Project goals
