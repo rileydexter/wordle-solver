@@ -161,26 +161,19 @@ def choose_guess_entropy_hard(possible_words, all_words):
     return best_guess
 
 def run_game(strategy, num_words):
-    # Initialise list of valid words, random target, list of possible
-    # targets, and empty list of lists to store history
+    # Initialise list of valid words, random target, and list of possibletargets
     start_words = load_words()
-    all_words = []
-    for i in range(num_words):
-        word = random.choice(start_words)
-        all_words.append(word)
-        start_words.remove(word)
-
+    all_words = random.sample(start_words, num_words)
     target = random.choice(all_words)
-
     possible_words = all_words.copy()
-    history = {}
+    print(time.time() - start_time)
 
     max_guesses = 20
     for turn in range(1, max_guesses + 1):
         guess = strategy(possible_words, all_words)
         feedback = get_feedback(guess, target)
 
-        history[guess] = feedback
+
         possible_words = filter_words(possible_words, guess, feedback)
 
         print(f"Turn {turn}: {guess} → {feedback}")
@@ -192,10 +185,10 @@ def run_game(strategy, num_words):
     print(f"Failed. Target was {target}")
 
 def main():
-    run_game(choose_guess_entropy, 1500)
+    run_game(choose_guess_entropy, 2000)
+    print(f"Time: {time.time() - start_time}")
 
 
 if __name__ == "__main__":
     main()
 
-print(f"Time: {time.time() - start_time}")
