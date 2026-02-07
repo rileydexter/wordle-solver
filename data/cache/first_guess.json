@@ -6,5 +6,20 @@
   "6|data/word-lists/dictionary.json|data/word-lists/targets.json": "satire",
   "7|data/word-lists/dictionary.json|data/word-lists/targets.json": "saltire",
   "8|data/word-lists/dictionary.json|data/word-lists/targets.json": "ceratins",
-  "9|data/word-lists/dictionary.json|data/word-lists/targets.json": "coastline"
+  "9|data/word-lists/dictionary.json|data/word-lists/targets.json": "coastline",
+  "hard_entropy_no_table|10|data/word-lists/dictionary.json|data/word-lists/targets.json": "mercantile",
+  "hard_entropy_no_table|11|data/word-lists/dictionary.json|data/word-lists/targets.json": "customarily",
+  "hard_entropy_no_table|4|data/word-lists/dictionary.json|data/word-lists/targets.json": "tare",
+  "hard_entropy_no_table|5|data/word-lists/dictionary.json|data/word-lists/targets.json": "raise",
+  "hard_entropy_no_table|6|data/word-lists/dictionary.json|data/word-lists/targets.json": "satire",
+  "hard_entropy_no_table|7|data/word-lists/dictionary.json|data/word-lists/targets.json": "latrine",
+  "hard_entropy_no_table|8|data/word-lists/dictionary.json|data/word-lists/targets.json": "senorita",
+  "hard_entropy_no_table|9|data/word-lists/dictionary.json|data/word-lists/targets.json": "coastline",
+  "hard_entropy|10|data/word-lists/dictionary.json|data/word-lists/targets.json": "tetrazolium",
+  "hard_entropy|4|data/word-lists/dictionary.json|data/word-lists/targets.json": "tune",
+  "hard_entropy|5|data/word-lists/dictionary.json|data/word-lists/targets.json": "gutsy",
+  "hard_entropy|6|data/word-lists/dictionary.json|data/word-lists/targets.json": "airway",
+  "hard_entropy|7|data/word-lists/dictionary.json|data/word-lists/targets.json": "develop",
+  "hard_entropy|8|data/word-lists/dictionary.json|data/word-lists/targets.json": "intruder",
+  "hard_entropy|9|data/word-lists/dictionary.json|data/word-lists/targets.json": "etymology"
 }
